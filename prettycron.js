@@ -50,7 +50,7 @@ if ((!moment || !later) && (typeof require !== 'undefined')) {
     if (type == 'dow') {
       return moment().day(value - 1).format('ddd');
     } else if (type == 'mon') {
-      return moment().month(value - 1).format('MMM');
+      return moment().month(value).format('MMM');
     }
   };
 
