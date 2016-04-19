@@ -90,7 +90,7 @@ if ((!moment || !later) && (typeof require !== 'undefined')) {
    * generate a friendly sentence description.
    */
   var scheduleToSentence = function(schedule) {
-    var output_text = 'Every ';
+    var output_text = 'every ';
 
     if (schedule['h'] && schedule['m'] && schedule['h'].length <= 2 && schedule['m'].length <= 2) {
       // If there are only one or two specified values for
@@ -103,10 +103,10 @@ if ((!moment || !later) && (typeof require !== 'undefined')) {
         }
       }
       if (hm.length < 2) {
-        output_text = hm[0];
+        output_text = 'at ' + hm[0];
       } else {
         var last_val = hm.pop();
-        output_text = hm.join(', ') + ' and ' + last_val;
+        output_text = 'on ' + hm.join(', ') + ' and ' + last_val;
       }
       if (!schedule['d'] && !schedule['D']) {
         output_text += ' every day';
